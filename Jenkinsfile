@@ -8,6 +8,7 @@ pipeline {
                     }
       steps {
         echo 'Hello World for multiline'
+        echo 'Check the output in master also'
       }
     }
   }
