@@ -5,7 +5,11 @@ pipeline {
 			when {
 				changelog '.*some_text.*'
 			}
+			steps {
+				echo "Building the change log"	
+			}
 		}
+		
 
 	}
 }
