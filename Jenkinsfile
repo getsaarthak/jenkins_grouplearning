@@ -3,10 +3,10 @@ pipeline {
 	stages {
 		stage('Build master') {
 			when {
-				changelog '.*some_text.*'
+				changeRequest()
 			}
 			steps {
-				echo "Building the change log"	
+				echo "Hellow World !!! Changing request"	
 			}
 		}
 		
