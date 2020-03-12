@@ -3,19 +3,9 @@ pipeline {
 	stages {
 		stage('Build master') {
 			when {
-				branch 'master'
-			}
-			steps {
-				echo "Building master now ..."
+				changelog '.*some_text.*'
 			}
 		}
-		stage('Build jenkins') {
-			when {
-				branch 'jenkins'
-			}
-			steps {
-				echo "Building jenkins now ..."
-			}
-		}
+
 	}
 }
