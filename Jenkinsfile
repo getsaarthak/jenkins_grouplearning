@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Build master') {
 			when {
-				changeRequest()
+				changeRequest title: "when-pr"
 			}
 			steps {
 				echo "Hellow World !!! Changing request"	
