@@ -1,0 +1,23 @@
+pipeline {
+	agent none
+    stages {
+        stage('Checkout') {
+			agent any
+            steps {                
+                checkout([$class: 'GitSCM', 
+				branches: [[name: "origin/master"]], 
+				userRemoteConfigs: [[
+                url: 'https://github.com/getsaarthak/jenkins_grouplearning.git']]				
+				])
+            }
+        }
+        stage('Build'){   
+		    agent {
+				dockerfile true
+			}
+            steps{
+                sh 'cat /etc/*release*'
+            }
+        }
+    }
+}
